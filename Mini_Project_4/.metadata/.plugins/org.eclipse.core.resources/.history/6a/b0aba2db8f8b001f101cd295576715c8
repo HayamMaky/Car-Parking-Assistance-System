@@ -1,0 +1,19 @@
+/*
+ * ultrasonic.c
+ *
+ *  Created on: Oct 16, 2024
+ *      Author: Hayam
+ */
+# include "icu.h"
+# include "ultrasonic.h"
+/***********************************************************/
+ICU_ConfigType ICU_Configrution={,};
+void Ultrasonic_init(void)
+{
+	 Description:
+	//Initialize the ICU driver as required.
+	//Set up the ICU callback function.
+	//Set the direction for the trigger pin as output through
+	the GPIO driver.
+
+}

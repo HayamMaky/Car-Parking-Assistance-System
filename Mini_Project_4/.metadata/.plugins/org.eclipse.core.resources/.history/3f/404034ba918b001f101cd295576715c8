@@ -1,0 +1,38 @@
+/*
+ * ultrasonic.c
+ *
+ *  Created on: Oct 16, 2024
+ *      Author: Hayam
+ */
+# include "icu.h"
+# include "ultrasonic.h"
+# include "gpio.h"
+/***********************************************************/
+GPIO_setupPinDirection(ULTRASONIC_TR_PORT_ID,ULTRASONIC_TR_PIN_ID,PIN_OUTPUT);
+//ICU_ConfigType ICU_Configrution={F_CPU_8,RAISING};
+/***********************************************************/
+void Ultrasonic_init(void)
+{
+
+	/*Initialize the ICU driver as required.*/
+	ICU_init(&ICU_Configrution);
+	/*Set up the ICU callback function.*/
+	//ICU_setCallBack();
+	//Set the direction for the trigger pin as output through
+	//the GPIO driver.
+
+}
+void Ultrasonic_Trigger(void)
+{
+	/*Send the trigger pulse to the ultrasonic sensor.*/
+}
+uint16 Ultrasonic_readDistance(void)
+{
+	/* Send the trigger pulse by using the Ultrasonic_Trigger function.*/
+
+	/*Start the measurement process via the ICU driver*/
+}
+void Ultrasonic_edgeProcessing(void)
+{
+
+}

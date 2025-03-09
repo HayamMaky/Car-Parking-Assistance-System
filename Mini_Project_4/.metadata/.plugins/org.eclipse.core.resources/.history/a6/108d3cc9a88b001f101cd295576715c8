@@ -1,0 +1,30 @@
+/*
+ * car_parking_sensor.c
+ *
+ *  Created on: Oct 16, 2024
+ *      Author: Hayam
+ */
+#include <avr/io.h>
+#include "buzzer.h"
+#include "lcd.h"
+#include "led.h"
+#include "ultrasonic.h"
+int main(void)
+{
+	/* Enable Global Interrupt I-Bit */
+	SREG |= (1<<7);
+	Buzzer_init();
+	LCD_init();
+	LEDS_init();
+	Ultrasonic_init();
+	uint16 dis=0;
+	while(1)
+	{
+		LCD_displayString("Distance=");
+		LCD_displayStringRowColumn(0,13,"cm");
+		dis=Ultrasonic_readDistance();
+		LCD_moveCursor(0,10);
+		LCD_intgerToString(dis);
+	}
+}
+
